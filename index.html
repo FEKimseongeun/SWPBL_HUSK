@@ -8,15 +8,38 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/earlyaccess/notosanskr.css">
+        <title>AI MASK CHECKING PROGRAM</title>
+        <link rel="stylesheet" href="index.css">
+        
     </head>
     <body>
-        <div>Teachable Machine Image Model</div>
-        <button type="button" onclick="init()">Start</button>
-        <div id="webcam-container"></div>
-        <div id="label-container"></div>
+        <div class="main-background"></div>
+        <div class="main-logo">
+            <img src="images/HUSK_SMU.png" style="width:90px;
+            height: 70px;">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="intro.html" >HUSK</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+            </ul>   
+        </nav> 
+
+        <div class="main-content"></div>
+            <div class="main_text">SHOW YOUR FACE</div>
+            <button type="button" onclick="init()">Start</button>
+            <div class="label-container" id="label-container"></div>
+            
+        </div>
+        <div class="square"></div>
+        <div class="webcam-container" id="webcam-container"></div>
         <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
         <script type="text/javascript">
@@ -46,16 +69,12 @@
                 const modelURL = URL + "model.json";
                 const metadataURL = URL + "metadata.json";
         
-                // load the model and metadata
-                // Refer to tmImage.loadFromFiles() in the API to support files from a file picker
-                // or files from your local hard drive
-                // Note: the pose library adds "tmImage" object to your window (window.tmImage)
                 model = await tmImage.load(modelURL, metadataURL);
                 maxPredictions = model.getTotalClasses();
         
                 // Convenience function to setup a webcam
                 const flip = true; // whether to flip the webcam
-                webcam = new tmImage.Webcam(200, 200, flip); // width, height, flip
+                webcam = new tmImage.Webcam(700, 700, flip); // width, height, flip
                 await webcam.setup(); // request access to the webcam
                 await webcam.play();
                 window.requestAnimationFrame(loop);
@@ -73,22 +92,50 @@
                 await predict();
                 window.requestAnimationFrame(loop);
             }
-        
+            
+
+            var status="마스크 안씀"
+            var audio
             // run the webcam image through the image model
             async function predict() {
-                // predict can take in an image, video or canvas html element
                 const prediction = await model.predict(webcam.canvas);
-                for (let i = 0; i < maxPredictions; i++) {
-                    if(prediction[i].probability.toFixed(2) === '1.00'){
-                        const item=data[prediction[i].className] 
-                        labelContainer.innerHTML=`마스크여부: ${item.name}`
+                // predict can take in an image, video or canvas html element
+                if(prediction[0].probability.toFixed(2) == '1.00'){
+                    
+                    if(status=="마스크 씀"||status=="코턱스크"){          
+                        audio=new Audio('Audio1.mp3');
+                        audio.play();
                     }
+                    status="마스크 안씀"
+                }else if(prediction[1].probability.toFixed(2) == '1.00'){
+                    
+                    if(status=="마스크 안씀"||status=="코턱스크"){  
+                    audio=new Audio('Audio2.m4a');
+                    audio.play();}
+                    status="마스크 씀"
+                }else if(prediction[2].probability.toFixed(2) == '1.00'){
+                    
+                    if(status=="마스크 씀"||status=="마스크 안씀"){  
+                    var audio=new Audio('Audio3.m4a');
+                    audio.play();}
+                    status="코턱스크"
+                }
+            
+                for (let i = 0; i < maxPredictions; i++) {
+                    if(prediction[i].probability.toFixed(2) == '1.00'){
+                            const item=data[prediction[i].className] 
+                            labelContainer.innerHTML=`${item.message}`
+                    }
+
+
                     // const classPrediction =
                     //     prediction[i].className + ": " + prediction[i].probability.toFixed(2);
                     // labelContainer.childNodes[i].innerHTML = classPrediction;
                 }
             }
+            
         </script>
+        
         
     </body>
 </html>
