@@ -44,7 +44,7 @@
 
 ----------------------
 **웹사이트 화면/기능 설명**
-<img src = "https://user-images.githubusercontent.com/62641359/122771906-d51f3980-d2e1-11eb-8b8b-d24a0e86af76.png" width=300px height=300px">
+<img src = "https://user-images.githubusercontent.com/62641359/122771906-d51f3980-d2e1-11eb-8b8b-d24a0e86af76.png" width=50% height=50%">
 웹사이트에 들어갔을 때 딱 보이는 화면입니다. 
 '들어가기' 버튼을 누르기전 사이트의 간단한 소개가 나오도록 하였습니다.
 
