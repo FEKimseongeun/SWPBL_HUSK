@@ -41,3 +41,22 @@
 - **Javascript** : 머신러닝 모델 주 언어 - 자바스크립트
 
 - **HTML/CSS** : 웹 UI 구현
+
+----------------------
+**웹사이트 화면/기능 설명**
+![image](https://user-images.githubusercontent.com/62641359/122771906-d51f3980-d2e1-11eb-8b8b-d24a0e86af76.png)
+
+웹사이트에 들어갔을 때 딱 보이는 화면입니다. 
+'들어가기' 버튼을 누르기전 사이트의 간단한 소개가 나오도록 하였습니다.
+
+![image](https://user-images.githubusercontent.com/62641359/122772795-b1102800-d2e2-11eb-8a5f-b4f6fdd150d4.png)
+![image](https://user-images.githubusercontent.com/62641359/122772836-be2d1700-d2e2-11eb-9fdf-87270cfc9f5b.png)
+![image](https://user-images.githubusercontent.com/62641359/122772874-c7b67f00-d2e2-11eb-9380-3145dfafe6df.png)
+![image](https://user-images.githubusercontent.com/62641359/122772914-d00eba00-d2e2-11eb-9f13-dd67ab22851d.png)
+![image](https://user-images.githubusercontent.com/62641359/122772951-dc931280-d2e2-11eb-981b-462d5d411818.png)
+![image](https://user-images.githubusercontent.com/62641359/122773017-e9176b00-d2e2-11eb-8047-2baed61eba0a.png)
+
+
+
+
+
