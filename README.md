@@ -44,14 +44,25 @@
 
 ----------------------
 **웹사이트 화면/기능 설명**
-![image](https://user-images.githubusercontent.com/62641359/122771906-d51f3980-d2e1-11eb-8b8b-d24a0e86af76.png)
-웹사이트에 들어갔을 때 딱 보이는 화면입니다. 
-'들어가기' 버튼을 누르기전 사이트의 간단한 소개가 나오도록 하였습니다.
 
+* 웹사이트에 들어갔을 때 딱 보이는 화면입니다. 
+- '들어가기' 버튼을 누르기전 사이트의 간단한 소개가 나오도록 하였습니다.
+![image](https://user-images.githubusercontent.com/62641359/122771906-d51f3980-d2e1-11eb-8b8b-d24a0e86af76.png)
+
+* 메인 화면 
+- 카메라로 사람 얼굴인지를 인식한 후에 마스크 착용 여부를 체크한다. 
+- 마스크를 썼으면 "안전합니다" 라는 음성이 나오게 되고
+- 코스크나 턱스크를 하면 "마스크를 제대로 써주세요" 라는 음성이 나오게 되며
+- 마스크를 착용하지 않았을 경우 "마스크를 써주세요" 라는 음성이 나오게 된다. 
 ![image](https://user-images.githubusercontent.com/62641359/122772795-b1102800-d2e2-11eb-8a5f-b4f6fdd150d4.png)
 ![image](https://user-images.githubusercontent.com/62641359/122772836-be2d1700-d2e2-11eb-9fdf-87270cfc9f5b.png)
 ![image](https://user-images.githubusercontent.com/62641359/122772874-c7b67f00-d2e2-11eb-9380-3145dfafe6df.png)
 ![image](https://user-images.githubusercontent.com/62641359/122772914-d00eba00-d2e2-11eb-9f13-dd67ab22851d.png)
+
+* ABOUT 화면
+- 프로젝트에대한 소개가 나오는 페이지
+- sw-PBL 공모전에 냈던 영상이 추가되어 나타남
+- 각 팀원들의 소개 
 ![image](https://user-images.githubusercontent.com/62641359/122772951-dc931280-d2e2-11eb-981b-462d5d411818.png)
 ![image](https://user-images.githubusercontent.com/62641359/122773017-e9176b00-d2e2-11eb-8047-2baed61eba0a.png)
 
